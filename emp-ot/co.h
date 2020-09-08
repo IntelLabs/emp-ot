@@ -13,6 +13,7 @@ class OTCO: public OT<OTCO<IO>> { public:
 	bool delete_G = true;
 	OTCO(IO* io, Group * _G = nullptr) {
 		this->io = io;
+		delete_G = true;
 		if (_G == nullptr)
 			G = new Group();
 		else {
@@ -89,6 +90,7 @@ class OTCO: public OT<OTCO<IO>> { public:
 		
 		delete[] bb;
 		delete[] B;
+		delete[] As;
 	}
 };
   /**@}*/

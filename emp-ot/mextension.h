@@ -26,6 +26,7 @@ class MOTExtension: public OTExtension<IO, OTCO, emp::MOTExtension> { public:
 	TCCRH tccrh;
 	MOTExtension(IO * io, bool committing = false, int ssp = 40) :
 		OTExtension<IO, OTCO, emp::MOTExtension>(io, ssp) {
+			this->open_data = nullptr;
 			this->committing = committing;
 		}
 

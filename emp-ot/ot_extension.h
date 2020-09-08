@@ -29,6 +29,12 @@ class OTExtension: public OT<OTExtension<IO, BaseOT, OTE>> { public:
 		G1 = new PRG[l];
 		tmp = new block[block_size/128];
 		extended_r = new bool[block_size];
+		
+		qT  = nullptr;
+		tT = nullptr;
+		setup = false;
+		io = nullptr;
+		memset(&block_s, 0, sizeof(block));
 	}
 
 	~OTExtension() {
