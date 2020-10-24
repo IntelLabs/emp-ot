@@ -23,21 +23,6 @@ endif (LATTICEOT)
 install(FILES cmake/emp-ot-config.cmake DESTINATION cmake/)
 install(DIRECTORY emp-ot DESTINATION include/)
 
-# Test cases
-macro (add_test _name)
-  add_test_with_lib(${_name} ${EMP-TOOL_LIBRARIES})
-
-  if (LATTICEOT AND NOT CMAKE_CXX_COMPILER_ID MATCHES "Clang")
-    target_compile_options(${_name} PUBLIC -fext-numeric-literals)
-  endif (LATTICEOT AND NOT CMAKE_CXX_COMPILER_ID MATCHES "Clang")
-
-endmacro()
-
-add_test(shot)
-add_test(mot)
-add_test(deltaot)
-add_test(ideal)
-
 if (LATTICEOT)
   set(INCLUDE_LATTICE_OT ON)
   add_test(lattice)
