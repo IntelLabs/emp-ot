@@ -1,14 +1,8 @@
-emp-ot [![Build Status](https://travis-ci.org/emp-toolkit/emp-ot.svg?branch=master)](https://travis-ci.org/emp-toolkit/emp-ot)
-=====
-<img src="https://raw.githubusercontent.com/emp-toolkit/emp-readme/master/art/logo-full.jpg" width=300px/>
+### This fork is adapted for [TinyGarble 2.0](https://github.com/IntelLabs/TinyGarble2.0). 
 
+# Installation
 
-### This branch is adapted for [TinyGarble 2.0](https://github.com/IntelLabs/TinyGarble2.0). 
-
-Installation
-=====
-
-1. Install prerequisites using the instructions [here](https://gitlab.devtools.intel.com/octo_core/emp-readme#detailed-installation). 
+1. Install prerequisites using the instructions from [TinyGarble 2.0](https://github.com/IntelLabs/TinyGarble2.0/README.md). 
 Follow the **Detailed Installation** instruction up to steps 2 since all the tools are not required for TinyGarble 2.0. 
 2. Optionally, if lattice-based OT is desired, install dependencies with `emp-ot/install_packages_lattice.sh`
 3. Install [emp-tool](https://github.com/IntelLabs/emp-tool).
