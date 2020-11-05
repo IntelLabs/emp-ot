@@ -105,20 +105,24 @@
     # Define settings for C/C++ analysis
     #####################################
     cpp:
-      # prepare:
+      prepare:
       #   # The `packages` section is valid for LGTM.com only. It names Ubuntu packages to
       #   # be installed.
-      #   packages:
-      #     - libxml2-dev
-      #     - libxslt1-dev
-      # Add an `after-prepare` step if you need to run commands after the prepare step.
+        packages:
+        - software-properties-common
+        - libboost-dev
+        - libboost-{random,timer,system}-dev
+
+            # Add an `after-prepare` step if you need to run commands after the prepare step.
       # Each command should be listed on a separate line.
       # This step is useful for C/C++ analysis where you want to prepare the environment
       # for the `configure` step without changing the default behavior for that step. 
       after_prepare:
-        - git clone https://github.com/emp-toolkit/emp-readme.git
-        - bash ./emp-readme/scripts/install_packages.sh
-        - bash ./emp-readme/scripts/install_emp-tool.sh
+
+
+        # - git clone https://github.com/emp-toolkit/emp-readme.git
+        # - bash ./emp-readme/scripts/install_packages.sh
+        # - bash ./emp-readme/scripts/install_emp-tool.sh
       
     #     # The `configure` step generates build configuration files which the `index` step
     #   # then uses to build the codebase.
@@ -134,10 +138,11 @@
     #     - export CRYPTOPP_DIR=$LGTM_SRC/cryptopp
     #   # The `index` step builds the code and extracts information during the build
     #   # process.
-    #   index:
+      index:
     #     # Override the autobuild process by specifying a list of custom build commands
     #     # to use instead. 
-    #     build_command:
+        build_command:
+            echo "foo"
     #       - $GNU_MAKE -j2 -s
     #     # Specify that all project or solution files should be used for extraction.
     #     # Default: false.
